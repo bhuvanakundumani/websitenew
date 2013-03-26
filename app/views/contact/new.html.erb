@@ -1,0 +1,47 @@
+<div id="contactus" class="content_top"></div>
+<div class="content_box">
+	<div class="content_title content_contactus"></div>
+	
+    	<h2>Contact Information</h2>
+    <div class="cleaner"></div>
+
+	        <p>Vestibulum ullamcorper ipsum nec augue. Vestibulum auctor odio eget ante. Nunc commodo, magna pharetra semper vehicula, dui ligula feugiat elit, et euismod nunc orci ut libero. Etiam sodales massa vel metus. Mauris et elit quis mauris aliquet luctus.   Sed justo dolor, convallis at, vestibulum vitae, elementum eu, pede.</p>
+	    <div class="cleaner h30"></div>
+
+	        <div class="col_w310 float_l">
+
+	            <h4>Please fill in the contact form</h4>
+
+	            <div id="contact_form">
+<%= form_for @message, :url => contact_path do |form| %>
+  <fieldset class="fields">
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+    
+    <div class="field">
+      <%= form.label :email %>
+      <%= form.text_field :email %>
+    </div>
+    <div class="field">
+      <%= form.label :subject %>
+      <%= form.text_field :subject %>
+    </div>
+    
+    <div class="field">
+      <%= form.label :body %>
+      <%= form.text_area :body %>
+    </div>
+  </fieldset>
+  
+  <fieldset class="actions">
+    <%= form.submit "Send" %>
+  </fieldset>
+<% end %>
+
+    </div> 
+</div>
+
+<div class="cleaner"></div>
+<a href="#" class="gototop">Go To Top</a>

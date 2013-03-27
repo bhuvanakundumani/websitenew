@@ -1,3 +1,6 @@
+
+
+
 <div id="contactus" class="content_top"></div>
 <div class="content_box">
 	<div class="content_title content_contactus"></div>
@@ -9,14 +12,19 @@
 	    <div class="cleaner h30"></div>
 
 	        <div class="col_w310 float_l">
+				<% if flash[:notice] %>
+				    <div id="notice"><%=raw flash[:notice] %></div>
+				<% end %>
 
 	            <h4>Please fill in the contact form</h4>
 
 	            <div id="contact_form">
 <%= form_for @message, :url => contact_path do |form| %>
+
+<font color ="blue"> <em> (All Fields are required.)</em> </font>
   <fieldset class="fields">
     <div class="field">
-      <%= form.label :name %>
+      <%= form.label :name  %>
       <%= form.text_field :name %>
     </div>
     
@@ -29,16 +37,20 @@
       <%= form.text_field :subject %>
     </div>
     
-    <div class="field">
+    <div class="field" style="width: ">
       <%= form.label :body %>
       <%= form.text_area :body %>
+
     </div>
   </fieldset>
   
-  <fieldset class="actions">
+  <fieldset class="actions" style="width:300px; height: 20px;">
     <%= form.submit "Send" %>
   </fieldset>
+
+
 <% end %>
+
 
     </div> 
 </div>
